@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: qr-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '${PORT}:${PORT}'
+    restart: always
+    networks:
+      - backend
+    env_file:
+      - .env
+
+
+networks:
+  backend:
+    name: qr-network
+    driver: bridge
+
