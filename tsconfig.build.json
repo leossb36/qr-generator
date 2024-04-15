@@ -10,6 +10,6 @@
     "**/*.guard.ts",
     "**/*.decorator.ts",
     "**/*.config.ts",
-    "**/*.helper.ts",
+    "**/*.helper.ts"
   ]
 }
