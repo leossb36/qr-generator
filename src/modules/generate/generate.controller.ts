@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Query, Res } from '@nestjs/common';
+import { Controller, Get, Query, Res } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { GenerateService } from './generate.service';
 import { Response } from 'express';
@@ -9,11 +9,11 @@ import { QrCodeProperty } from './dto/property.dto';
 export class GenerateController {
   constructor(private readonly generateService: GenerateService) {}
 
-  @Get(':data')
+  @Get()
   async generateQRCode(
-    @Param('data') data: string,
+    @Query() property: QrCodeProperty,
+    @Query('data') data: string,
     @Res() res: Response,
-    @Query() property?: QrCodeProperty,
   ) {
     try {
       const response = await this.generateService.generateQrCode(

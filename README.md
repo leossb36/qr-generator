@@ -30,19 +30,19 @@ Node.js >= 18
 
 #### Descrição da solução
 
-Ao executar a api basta chamar o endpoint `/generate/{data}?size={value}`.
+Ao executar a api basta chamar o endpoint `/generate?size={value}&data={value}`.
 
 ##### Parametros de rota
 
-`data`: é um valor em **string** que é passado como **param** de rota, ou seja, permite ao usuário que insira o conteúdo do QRcode.
+`data`: é um valor em **string** que é passado como **Query param** de rota, ou seja, permite ao usuário que insira o conteúdo do QRcode.
 
-**exemplo**: `/generate/teste123`
+**exemplo**: `/generate?data=teste123`
 
 `size`: é um valor em **number e/ou inteiro** que é passado como **Query param** para definir a largura x altura da imagem do QRcode. **Obs**: Este é um parametro opcional que possui um valor mínimo de 80 e um valor maximo de 500. Uma vez que o `size` não é passado em rota, por padrão devolverá um QRcode de tamanho 80x80.
 
-**exemplo**: `/generate/teste123?size=250` - devolve um QRcode de tamanho 250x250.
+**exemplo**: `/generate?size=250&data=teste123` - devolve um QRcode de tamanho 250x250.
 
-**exemplo 2**: `/generate/teste123` - devolve um Qrcode de tamanho 80x80.
+**exemplo 2**: `/generate?data=teste123` - devolve um Qrcode de tamanho 80x80.
 
 
 
