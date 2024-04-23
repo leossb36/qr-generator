@@ -7,7 +7,7 @@ export class QrCodeProperty {
   @ApiProperty({ default: 80, required: false })
   @Type(() => Number)
   @IsInt()
-  @Min(0, { message: MESSAGES.MIN_LIMIT })
+  @Min(80, { message: MESSAGES.MIN_LIMIT })
   @IsOptional()
   readonly size?: number = 80;
 }
